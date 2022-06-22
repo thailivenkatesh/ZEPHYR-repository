@@ -1,4 +1,4 @@
-* Merge sort in C */
+/* Merge sort in C */
 #include<stdio.h>
 #include<stdlib.h>
 
