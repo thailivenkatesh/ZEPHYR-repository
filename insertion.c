@@ -7,7 +7,7 @@ void insertionsort(int a[],int n){
    while(hole>0 && a[hole-1]>value)
    {
        a[hole]=a[hole-1];
-       hole=hole-1;
+       hole-=1;
    }
    a[hole]=value;
     }
