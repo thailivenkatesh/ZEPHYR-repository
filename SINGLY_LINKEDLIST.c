@@ -59,6 +59,39 @@ struct node* delete_at_first(struct node* head){
    return head;
 }
 
+struct node* delete_at_end(struct node* head){
+   struct node* temp;
+   struct node* ptr=head;
+   while(ptr->link!=0){
+	   temp=ptr;
+	   ptr=ptr->link;
+   }
+   
+   temp->link=0;
+   free(ptr);
+   return head;
+}
+struct node* delete_at_certain(struct node* head,int pos){
+   struct node* temp;
+   struct node* ptr=head;
+   pos--;
+   while(pos!=0){
+       pos--;
+	   temp=ptr;
+	   ptr=ptr->link;
+   }
+   temp->link=ptr->link;
+   free(ptr);
+   return head;
+}
+void print(struct node *ptr)
+{
+     while(ptr!=0)
+   {
+       printf("%d\t",ptr->data);
+       ptr=ptr->link;
+   }
+}
 int main() {
     // Write C code here
 struct node* head;
@@ -71,40 +104,33 @@ head=add_at_begin(head,1);
 struct node* ptr;
 ptr=head;
 printf("list : ");
-while(ptr!=0){
-    printf("%d\t",ptr->data);
-    ptr=ptr->link;
-}
+   print(ptr);
 
 printf("\nlast list : ");
 add_at_end(head,5);
 ptr=head;
-while(ptr!=0){
-    printf("%d\t",ptr->data);
-    ptr=ptr->link;
-}
+   print(ptr);
 printf("\ncertain list : ");
 add_at_certain(head,6,3);
 ptr=head;
-while(ptr!=0){
-    printf("%d\t",ptr->data);
-    ptr=ptr->link;
-}
+   print(ptr);
 printf("\nreverse list : ");
 head=rev(head);
 ptr=head;
 
-while(ptr!=0){
-    printf("%d\t",ptr->data);
-    ptr=ptr->link;
-}
+   print(ptr);
 head=delete_at_first(head);
-printf("\ndelete list : ");
+printf("\ndelete start : ");
 ptr=head;
 
-while(ptr!=0){
-    printf("%d\t",ptr->data);
-    ptr=ptr->link;
-}
+   print(ptr);
+printf("\ndelete end : ");
+head=delete_at_end(head);
+ptr=head;
+   print(ptr);
+printf("\ndelete certain : ");
+head=delete_at_certain(head,2);
+ptr=head;
+   print(ptr);
     return 0;
 }
