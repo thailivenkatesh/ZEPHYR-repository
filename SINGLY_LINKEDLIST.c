@@ -94,43 +94,43 @@ void print(struct node *ptr)
 }
 int main() {
     // Write C code here
-struct node* head;
-head=malloc(sizeof(struct node));
-head->data=4;
-head->link=0;
-head=add_at_begin(head,3);
-head=add_at_begin(head,2);
-head=add_at_begin(head,1);
-struct node* ptr;
-ptr=head;
-printf("list : ");
-   print(ptr);
+	struct node* head;
+	head=malloc(sizeof(struct node));
+	head->data=4;
+	head->link=0;
+	head=add_at_begin(head,3);
+	head=add_at_begin(head,2);
+	head=add_at_begin(head,1);
+	struct node* ptr;
+	ptr=head;
+	printf("list : ");
+	print(ptr);
 
-printf("\nlast list : ");
-add_at_end(head,5);
-ptr=head;
-   print(ptr);
-printf("\ncertain list : ");
-add_at_certain(head,6,3);
-ptr=head;
-   print(ptr);
-printf("\nreverse list : ");
-head=rev(head);
-ptr=head;
+	printf("\nlast list : ");
+	add_at_end(head,5);
+	ptr=head;
+	print(ptr);
+	printf("\ncertain list : ");
+	add_at_certain(head,6,3);
+	ptr=head;
+	print(ptr);
+	printf("\nreverse list : ");
+	head=rev(head);
+	ptr=head;
 
-   print(ptr);
-head=delete_at_first(head);
-printf("\ndelete start : ");
-ptr=head;
+	print(ptr);
+	head=delete_at_first(head);
+	printf("\ndelete start : ");
+	ptr=head;
 
-   print(ptr);
-printf("\ndelete end : ");
-head=delete_at_end(head);
-ptr=head;
-   print(ptr);
-printf("\ndelete certain : ");
-head=delete_at_certain(head,2);
-ptr=head;
-   print(ptr);
+	print(ptr);
+	printf("\ndelete end : ");
+	head=delete_at_end(head);
+	ptr=head;
+	print(ptr);
+	printf("\ndelete certain : ");
+	head=delete_at_certain(head,2);
+	ptr=head;
+	print(ptr);
     return 0;
 }
