@@ -88,6 +88,22 @@ void delete_at_certain(struct node* head,int pos){
   free(ptr);
   ptr=0;
 }
+
+struct node* rev(struct node* head){
+    struct node* ptr1=head;
+    struct node* ptr2=ptr1->next;
+    ptr1->next=0;
+    ptr1->prev=ptr2;
+   
+    while(ptr2!=0){
+        ptr2->prev=ptr2->next;
+        ptr2->next=ptr1;
+        ptr1=ptr2;
+        ptr2=ptr2->prev;
+    }
+    head=ptr1;
+   return head; 
+}
 void print(struct node *ptr)
 {
      while(ptr!=0)
@@ -132,5 +148,10 @@ int main() {
 	ptr=head;
 	printf("\ndelete certain : ");
 	print(ptr);
+	head=rev(head);
+	ptr=head;
+	printf("\nrev  : ");
+	print(ptr);
+	
 	return 0;
 }
