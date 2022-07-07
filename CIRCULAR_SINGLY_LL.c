@@ -27,11 +27,10 @@ int main()
     struct node* tail;
     tail= malloc(sizeof(struct node));
     tail->data=1;
-    tail->next=tail;
-  //  printf("%d",tail->data);
-  int i;
-  for(i=2;i<7;i++)
-    tail=add_at_begin(tail,i);
+    tail->next=tail; 
+    int i;
+    for(i=2;i<7;i++)
+        tail=add_at_begin(tail,i);
     print(tail);
 
 return 0;
