@@ -87,8 +87,7 @@ printf("%d ", p->data);
 p = p->next;
 } while(p!=tail->next);
 }
-int main()
-{
+int main(){
     struct node* tail;
     tail= malloc(sizeof(struct node));
     tail->data=1;
