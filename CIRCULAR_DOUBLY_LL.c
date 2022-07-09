@@ -75,6 +75,22 @@ struct node* delAtend(struct node*tail){
     temp=0;
     return tail;
 }
+void delAtcertain(struct node*tail,int pos){
+    struct node* temp=tail->next;
+    struct node* ptr;
+    pos--;
+    while(pos!=0){
+       pos--;
+       ptr=temp;
+       temp=temp->next;
+    }
+    ptr->next=temp->next;
+    struct node* temp1=temp->next;
+    temp1->prev=temp->prev;
+    free(temp);
+    temp=0;
+
+}
 
 void print(struct node* tail){
 
@@ -111,5 +127,8 @@ int main()
 	printf("\ndelete last:");
 	tail=delAtend(tail);
 	print(tail);
-return 0;
+	printf("\ndelete certain:");
+	delAtcertain(tail,3);
+	print(tail);
+	return 0;
 }
