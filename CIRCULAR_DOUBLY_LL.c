@@ -103,7 +103,7 @@ void print(struct node* tail){
     
     printf("\n");
 }
-int main()
+void main()
 {
 	struct node* tail = NULL;
 	tail=malloc(sizeof(struct node));
@@ -130,5 +130,5 @@ int main()
 	printf("\ndelete certain:");
 	delAtcertain(tail,3);
 	print(tail);
-	return 0;
+
 }
