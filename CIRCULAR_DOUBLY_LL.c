@@ -56,11 +56,21 @@ void addAtcertain(struct node* tail, int data,int pos){
     ptr->prev = newP;
 
 }
-struct node* addAtfirst(struct node*tail){
+struct node* delAtfirst(struct node*tail){
     struct node* temp=tail->next;
     struct node* ptr=temp->next;
     ptr->prev = tail;
     tail->next=ptr;
+    free(temp);
+    temp=0;
+    return tail;
+}
+
+struct node* delAtend(struct node*tail){
+    struct node* temp=tail;
+   
+    tail= tail->prev;
+    tail->next=temp->next;
     free(temp);
     temp=0;
     return tail;
@@ -85,7 +95,8 @@ int main()
 	tail->prev=tail;
 	tail->next=tail;
 	printf("\nbegin:");
-	tail = addAtBeg(tail, 34);tail = addAtBeg(tail, 32);tail = addAtBeg(tail, 31);tail = addAtBeg(tail, 30);
+	tail = addAtBeg(tail, 34);tail = addAtBeg(tail, 32);
+	tail = addAtBeg(tail, 31);tail = addAtBeg(tail, 30);
 	print(tail);
 	printf("\nend:");
 	tail = addAtend(tail, 36);tail = addAtend(tail, 37);
@@ -95,7 +106,10 @@ int main()
 	print(tail);
 
 	printf("\ndelete 1st:");
-	tail=addAtfirst(tail);
+	tail=delAtfirst(tail);
+	print(tail);
+	printf("\ndelete last:");
+	tail=delAtend(tail);
 	print(tail);
 return 0;
 }
