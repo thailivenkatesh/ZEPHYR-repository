@@ -1,3 +1,4 @@
+//The C memchr function is a String Function, which will find the first occurrence of the character, and returns the pointer to it.
 #include  <stdio.h>
 
 int main(int argc, const char * argv[])
