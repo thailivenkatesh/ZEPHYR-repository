@@ -1,0 +1,22 @@
+// strcat in C Programming to strncat strings  
+#include <stdio.h> 
+#include<string.h>
+int main()
+{
+   char str1[] = "Learn";
+   char str2[] = "CLang";
+
+   /*	printf("lib fun\n");
+   strcat(str1, str2);		
+   puts(str1);*/
+   int i,n,j=0;
+   printf("\nown fun\n");
+   j=strlen(str1);
+   printf("enter how many char to concatinate\n ");
+   scanf("%d",&n);
+   for(i=0;i<n;i++){
+      str1[j++]=str2[i];
+      }
+   str1[j]='\0';
+   puts(str1);
+}
