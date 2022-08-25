@@ -37,18 +37,16 @@ void add_at_certain(struct node* head,unsigned int data,int pos){
 
 }
 struct node* rev(struct node* head){
-    struct node* ptr=head;
     struct node* next=0;
-    struct node* prev=0;
-    
-    while(ptr!=0){
-        next=ptr->link;
-        ptr->link=prev;
-        prev=ptr;
-        ptr=next;
+    struct node* prev=0;    
+    while(head!=0){
+    next=head->link;
+    head->link=prev;
+    prev=head;
+    head=next;
     }
-    ptr=prev;
-    return ptr;
+    head=prev;
+    return head
 }
 
 struct node* delete_at_first(struct node* head){
