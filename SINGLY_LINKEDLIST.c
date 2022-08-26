@@ -1,5 +1,6 @@
 // Online C compiler to run C program online
 #include <stdio.h>
+#include<stdlib.h>
 struct node{
     unsigned int data;
     struct node* link;
@@ -46,7 +47,7 @@ struct node* rev(struct node* head){
     head=next;
     }
     head=prev;
-    return head
+    return head;
 }
 
 struct node* delete_at_first(struct node* head){
