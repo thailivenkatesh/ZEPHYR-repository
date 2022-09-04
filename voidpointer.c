@@ -4,7 +4,8 @@
 int main() {
     // Write C code here
     unsigned int a=9;
-    void *p=&a;
-    printf("%d",*(int*)p);
+    void *p=&a;//pointing to int type data type
+    printf("%d",*(int*)p);//type casted and dereferenced
+    // printf("%d",*p);//output error//we cannot dereference a void pointer
     return 0;
 }
