@@ -1,7 +1,6 @@
 // Null pointer is a pointer which doesn't point to anymemory location. it represents an invalid memory location
-
 #include <stdio.h>
-
+#include <stdlib.h>
 //int main() {
     // Write C code here
     //unsigned int a=9;
@@ -13,9 +12,8 @@
 int main(){
     int *ptr;
     ptr=(int*)malloc(sizeof(int));
-    if(ptr==NULL)
-        printf("memory not allocted");
-   else
-   printf("memory allocated");
-
+    if(ptr==NULL)printf("memory not allocted");
+    else printf("memory allocated");
+    printf("\n%d",sizeof(NULL));
+return  0;
 }
