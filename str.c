@@ -50,7 +50,7 @@ int main()
 #include<string.h>
 int main()
 {
-    char str[]="heluloh";
+    char str[]="helllleh";
     int i;
     int cnt =0;
     int len=strlen(str);
@@ -58,10 +58,11 @@ int main()
       if(str[i]==str[len-i-1])
       cnt++;
   }
-  if(cnt==0)
-  printf("not polondrome");
+  printf("%d %d",cnt,len/2);
+  if(cnt>=len/2)
+  printf("polondrome");
   else
-  printf("polindrome");
+  printf("not polindrome");
     return 0;
 }
 
